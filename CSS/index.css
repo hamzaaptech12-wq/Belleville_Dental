@@ -1,0 +1,523 @@
+/* Belleville Dental: styles for the index page only. Shared styles are in theme.css. */
+/* ---------- Home hero carousel (Bootstrap carousel, themed) ---------- */
+.hero-carousel {
+  position: relative;
+}
+
+.hero-carousel .hero-cap {
+  margin: .9rem 0 2.2rem;
+  text-align: center;
+  color: var(--fg);
+}
+
+.hero-carousel .hero-cap strong {
+  display: block;
+  color: var(--heading);
+  font: 600 1.15rem/1.3 var(--f-body);
+  margin-bottom: .15rem;
+}
+
+.hero-carousel .carousel-indicators {
+  bottom: -.35rem;
+  margin-bottom: 0;
+}
+
+.hero-carousel .carousel-indicators [data-bs-target] {
+  width: .7rem;
+  height: .7rem;
+  border-radius: 50%;
+  border: 0;
+  background-color: var(--btn);
+  opacity: .35;
+  margin: 0 .3rem;
+}
+
+.hero-carousel .carousel-indicators .active {
+  opacity: 1;
+}
+
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next {
+  width: 3.5rem;
+  opacity: 1;
+}
+
+.hero-carousel .carousel-control-prev-icon,
+.hero-carousel .carousel-control-next-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background-color: var(--btn);
+  background-size: 50%;
+  box-shadow: var(--shadow);
+  transition: background-color .2s;
+}
+
+.hero-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.hero-carousel .carousel-control-next:hover .carousel-control-next-icon {
+  background-color: var(--btn-h);
+}
+
+.hero-carousel .carousel-control-prev:active .carousel-control-prev-icon,
+.hero-carousel .carousel-control-next:active .carousel-control-next-icon {
+  background-color: var(--btn-a);
+}
+
+/* Keep the carousel colours on-theme in dark mode (Bootstrap's dark theme would turn the arrows grey) */
+html[data-bs-theme] .hero-carousel .carousel-control-prev-icon,
+html[data-bs-theme] .hero-carousel .carousel-control-next-icon {
+  filter: none;
+}
+
+html[data-theme="dark"] .hero-carousel .carousel-indicators [data-bs-target] {
+  background-color: var(--link);
+  opacity: .5;
+}
+
+html[data-theme="dark"] .hero-carousel .carousel-indicators .active {
+  opacity: 1;
+}
+
+
+/* ---------- Home: slide board (camera zoom-and-pan between cards) ----------
+   Ported from the first site's home page (board / cam / cd). Cards sit on a 3-column grid. The "camera" zooms out,
+   pans to the next card and zooms back in. Without JavaScript, on phones and on short screens the cards simply stack
+   (flat layout). JS adds .slides to the board when the camera layout is in use. */
+body.page-index { background: var(--bg); }
+
+.home-main {
+  background: linear-gradient(160deg, var(--alt), var(--bg) 55%, var(--alt));
+}
+
+.board {
+  position: relative;
+  padding: 12px 0;
+}
+
+.cd {
+  position: relative;
+  width: calc(100% - 24px);
+  max-width: 74rem;
+  margin: 16px auto;
+  padding: 2em 1.4em;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.cd-alt {
+  background: var(--alt);
+}
+
+.cd-panel {
+  background: linear-gradient(150deg, var(--panel), #0c2f2c);
+  color: var(--on-panel);
+  border-color: transparent;
+}
+
+.cd-panel h2 {
+  color: #fff;
+}
+
+.cd-panel .eyebrow {
+  color: var(--accent);
+}
+
+/* sizes in em, so a whole card scales with the board height */
+.cd h1 {
+  font: 500 2.4em/1.1 var(--f-display);
+  margin-bottom: .4em;
+}
+
+.cd h2 {
+  font: 500 2em/1.12 var(--f-display);
+  margin-bottom: .45em;
+}
+
+.cd h3 {
+  font-size: 1.05em;
+  line-height: 1.3;
+  margin-bottom: .35em;
+}
+
+.cd p,
+.cd li {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.cd .lede {
+  font-size: 1.1em;
+  max-width: 34em;
+}
+
+.cd .eyebrow {
+  font-size: .75em;
+  margin-bottom: .6em;
+}
+
+.cd .btn {
+  --bs-btn-font-size: 1em;
+  --bs-btn-padding-y: .55em;
+  --bs-btn-padding-x: 1.2em;
+}
+
+.cd .actions {
+  margin-top: 1.1em;
+}
+
+.cd .rhythm {
+  margin-top: 1.3em;
+  padding-top: .9em;
+  gap: .7em 1.2em;
+  font-size: .88em;
+}
+
+.cd .rhythm strong {
+  font-size: 1.5em;
+}
+
+.cd .ticks li {
+  margin-bottom: .55em;
+}
+
+.cd-split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.6em;
+  align-items: center;
+}
+
+.cd-split-rev {
+  grid-template-columns: .95fr 1.05fr;
+}
+
+.cd-media img.art {
+  max-height: 22em;
+  object-fit: contain;
+}
+
+.cd .hero-carousel .art {
+  max-height: 17em;
+  object-fit: contain;
+}
+
+.cd .hero-carousel .hero-cap {
+  margin: .6em 0 1.8em;
+  font-size: .9em;
+}
+
+.cd .hero-carousel .hero-cap strong {
+  font-size: 1.1em;
+}
+
+.cd-head {
+  max-width: 46em;
+}
+
+.cd-head .lede {
+  font-size: 1em;
+}
+
+.cd-trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.3em;
+  margin-top: 1.2em;
+}
+
+.cd-trio .card {
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.cd-trio .card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.cd-trio .card-img-top {
+  height: 9.5em;
+  object-fit: cover;
+}
+
+.cd-trio .card-body {
+  padding: 1em 1.2em;
+}
+
+.cd-trio .card-body p {
+  font-size: .9em;
+}
+
+.cd .more {
+  font-size: .85em;
+}
+
+.cd-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1em;
+  margin-top: 1.2em;
+}
+
+.tile-link {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: .8em;
+  color: var(--fg);
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.tile-link:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--btn);
+  color: var(--fg);
+}
+
+.tile-link img {
+  flex: 0 0 6em;
+  width: 6em;
+  height: 6em;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tile-link h3 {
+  margin: 0 0 .25em;
+}
+
+.tile-link small {
+  display: block;
+  font-size: .82em;
+  line-height: 1.4;
+}
+
+.quad-demo {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1em;
+  counter-reset: q;
+}
+
+.quad-demo li {
+  counter-increment: q;
+  text-align: center;
+  padding: 1.5em 1em;
+  border: 1px solid rgba(231, 240, 229, .28);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .05);
+  font-size: .95em;
+}
+
+.quad-demo li::before {
+  content: counter(q);
+  display: block;
+  font: 500 .75em var(--f-mono);
+  letter-spacing: .12em;
+  color: var(--accent);
+  margin-bottom: .4em;
+}
+
+.quad-demo b {
+  display: block;
+  font: 500 2em/1.1 var(--f-display);
+  color: #fff;
+}
+
+/* entrance animation inside each card, started when the camera arrives (.on) */
+.js .cd .rv {
+  opacity: 0;
+  transform: translateY(1.4em);
+  transition: opacity .7s ease, transform .7s ease;
+  transition-delay: calc(var(--i, 0) * 90ms + 200ms);
+}
+
+.js .cd.on .rv {
+  opacity: 1;
+  transform: none;
+}
+
+/* rail: arrows and dots */
+.rail,
+.board-hint {
+  display: none;
+}
+
+.nav-arrow {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--heading);
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.nav-arrow:hover {
+  background: var(--btn);
+  color: #fff;
+}
+
+.nav-arrow svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dots {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dots button {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.dots button::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  transition: transform .3s ease, background-color .3s ease;
+}
+
+.dots button.a::after {
+  background: var(--btn);
+  transform: scale(1.35);
+}
+
+.dots button:focus-visible,
+.nav-arrow:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
+/* camera layout (class added by index.js) */
+.board.slides {
+  overflow: hidden;
+  perspective: 1600px;
+  padding: 0;
+}
+
+.slides .cam {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(.65, 0, .25, 1);
+}
+
+.slides .cd {
+  position: absolute;
+  margin: 0;
+  max-width: none;
+  padding: 2.2em 3em;
+  font-size: var(--fs, 16px);
+  border-radius: 26px;
+  box-shadow: var(--shadow), 0 22px 60px rgba(18, 63, 59, .16);
+}
+
+.slides .rail {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.slides .board-hint {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  z-index: 5;
+  margin: 0;
+  text-align: center;
+  font: 500 .6875rem/1 var(--f-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--fg);
+  opacity: .6;
+  pointer-events: none;
+}
+
+@media (max-width: 991.98px) {
+
+  .cd-split,
+  .cd-split-rev,
+  .cd-trio {
+    grid-template-columns: 1fr;
+  }
+
+  .cd-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cd-split-rev .cd-media {
+    order: 2;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cd h1 {
+    font-size: 2em;
+  }
+
+  .cd h2 {
+    font-size: 1.7em;
+  }
+
+  .cd-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .slides .cam,
+  .js .cd .rv {
+    transition-duration: .01s;
+    transition-delay: 0s;
+  }
+}

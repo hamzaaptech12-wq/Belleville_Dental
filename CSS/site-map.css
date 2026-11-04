@@ -1,0 +1,47 @@
+/* Belleville Dental: styles for the site-map page only. Shared styles are in theme.css. */
+.tree {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tree>li {
+  padding: 1rem 0;
+  border-top: 1px solid var(--line-strong);
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: .5rem 2rem;
+}
+
+.tree>li>a {
+  font: 500 1.4rem/1.2 var(--f-display);
+  text-decoration: none;
+  color: var(--heading);
+}
+
+.tree>li>a:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.tree ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.25rem;
+}
+
+.tree ul a {
+  font-weight: 500;
+}
+
+.tree p {
+  margin: 0 0 .5rem;
+  font-size: .9375rem;
+  flex-basis: 100%;
+}
+
+.sitemap-filter { max-width: 26rem; margin-bottom: 1.25rem; }
+.tree li.is-hidden { display: none; }

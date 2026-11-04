@@ -1,0 +1,74 @@
+/* Belleville Dental: styles for the products page only. Shared styles are in theme.css. */
+/* ---------- Products ---------- */
+.prod .card-img-top {
+  background: var(--alt);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.prod h3 {
+  font-size: 1.0625rem;
+  margin: 0;
+}
+
+.prod p {
+  margin: 0;
+  font-size: .9375rem;
+}
+
+.prod-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+}
+
+.price {
+  font: 500 1.0625rem var(--f-mono);
+  color: var(--heading);
+}
+
+.rate {
+  margin-top: .5rem;
+  border-top: 1px solid var(--line);
+  padding-top: .7rem;
+}
+
+.stars {
+  display: inline-flex;
+  gap: .05rem;
+}
+
+.star {
+  background: none;
+  border: 0;
+  padding: .2rem;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.star svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+  transition: fill .15s ease, stroke .15s ease;
+}
+
+.star.on svg,
+.star.pv svg {
+  fill: var(--accent);
+  stroke: var(--accent-ink);
+}
+
+.star:hover svg {
+  stroke: var(--accent-ink);
+}
+
+.rate-text {
+  font-size: .8125rem;
+  margin: .15rem 0 0;
+}
+

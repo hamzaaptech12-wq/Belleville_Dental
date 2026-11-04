@@ -1,0 +1,6 @@
+/* Belleville Dental: styles for the about page only. Shared styles are in theme.css. */
+.page-about .card h3 { margin-top: .25rem; }
+.page-about .card { transition: transform .25s ease, box-shadow .25s ease; }
+.page-about .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+/* reading-progress bar (created by about.js) */
+.read-progress { position: fixed; top: 0; left: 0; height: 4px; width: 0; z-index: 2100; background: var(--accent); transition: width .1s linear; }

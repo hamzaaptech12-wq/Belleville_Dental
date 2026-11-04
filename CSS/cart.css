@@ -1,0 +1,102 @@
+/* Belleville Dental: styles for the cart page only. Shared styles are in theme.css. */
+.cart-row {
+  display: grid;
+  grid-template-columns: 72px 1fr auto auto auto;
+  align-items: center;
+  gap: .75rem 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.cart-row:first-child {
+  border-top: 0;
+}
+
+.cart-row img,
+.cart-noimg {
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--alt);
+  object-fit: cover;
+  display: block;
+}
+
+.qty {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.qty .btn {
+  min-width: 2rem;
+  padding-inline: .5rem;
+}
+
+.qty-num {
+  min-width: 1.5rem;
+  text-align: center;
+  font: 600 1rem var(--f-mono);
+  color: var(--heading);
+}
+
+.line-total {
+  min-width: 4.5rem;
+  text-align: right;
+  font: 500 1.0625rem var(--f-mono);
+  color: var(--heading);
+}
+
+.sum-list {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .45rem 1rem;
+}
+
+.sum-list dt {
+  font-weight: 500;
+}
+
+.sum-list dd {
+  margin: 0;
+  text-align: right;
+  font-family: var(--f-mono);
+}
+
+.sum-list .sum-total {
+  border-top: 1px solid var(--line-strong);
+  padding-top: .6rem;
+  margin-top: .2rem;
+  font-weight: 700;
+  color: var(--heading);
+  font-size: 1.125rem;
+}
+
+.cart-summary {
+  position: sticky;
+  top: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .cart-row {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .cart-row .qty,
+  .cart-row .line-total,
+  .cart-row [data-remove] {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
+  }
+}
+
+.sum-list {
+  column-gap: 0;
+}
+
+.sum-list dd {
+  padding-left: 1rem;
+}
+

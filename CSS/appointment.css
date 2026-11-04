@@ -1,0 +1,28 @@
+/* Belleville Dental: styles for the appointment page only. Shared styles are in theme.css. */
+.chip:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.chip:disabled:hover {
+  background: var(--surface);
+  color: var(--fg);
+  border-color: var(--line-strong);
+}
+
+.detail-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: .4rem 1.25rem;
+}
+
+.detail-list dt {
+  color: var(--heading);
+  font-weight: 600;
+}
+
+.detail-list dd {
+  margin: 0;
+}
+

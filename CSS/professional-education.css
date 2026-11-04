@@ -1,0 +1,6 @@
+/* Belleville Dental: styles for the professional-education page only. Shared styles are in theme.css. */
+.page-professional-education .course-col .card { transition: transform .25s ease, box-shadow .25s ease; }
+.page-professional-education .course-col .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.page-professional-education .course-links { margin: .15rem 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .35rem; }
+.page-professional-education .course-links a { font-size: .8125rem; padding: .2rem .55rem; }
+.page-professional-education .course-col .card-img-top { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }

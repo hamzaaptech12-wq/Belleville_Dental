@@ -1,0 +1,54 @@
+/* Belleville Dental: styles for the gallery page only. Shared styles are in theme.css. */
+/* ---------- Gallery, player ---------- */
+.tile {
+  display: block;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  color: var(--fg);
+  transition: border-color .18s ease, color .18s ease;
+}
+
+.tile:hover {
+  border-color: var(--btn);
+  color: var(--link);
+}
+
+.tile:active {
+  border-color: var(--btn-a);
+}
+
+.tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.tile-cap {
+  display: block;
+  padding: .8rem 1rem 1rem;
+  font-weight: 700;
+  font-size: .9375rem;
+}
+
+.tile-cap small {
+  display: block;
+  font-weight: 400;
+  margin-top: .15rem;
+}
+
+.lb-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+

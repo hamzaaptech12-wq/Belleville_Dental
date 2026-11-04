@@ -1,0 +1,121 @@
+/* Belleville Dental: styles for the patient-education page only. Shared styles are in theme.css. */
+/* ---------- Brush timer, quiz ---------- */
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.ring {
+  position: relative;
+  width: 11rem;
+  height: 11rem;
+  flex: none;
+}
+
+.ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring circle {
+  fill: none;
+  stroke-width: 9;
+}
+
+.ring .bg {
+  stroke: var(--line-strong);
+}
+
+.ring .fg {
+  stroke: var(--accent);
+  stroke-linecap: round;
+  transition: stroke-dashoffset .3s linear;
+}
+
+.ring-text {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.ring-time {
+  font: 500 2.2rem/1 var(--f-display);
+  color: var(--on-panel);
+  font-variant-numeric: tabular-nums;
+}
+
+.ring-sub {
+  font: 500 .6875rem var(--f-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-top: .3rem;
+  color: var(--on-panel-dim);
+}
+
+.quads {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .4rem;
+  margin: 1rem 0;
+}
+
+.quads span {
+  font: 600 .75rem/1.25 var(--f-body);
+  text-align: center;
+  padding: .6rem .25rem;
+  border-radius: 4px;
+  border: 1px solid rgba(231, 240, 229, .35);
+  color: var(--on-panel);
+  transition: background-color .25s ease, color .25s ease;
+}
+
+.quads span.on {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+
+.quads span.done {
+  background: rgba(231, 240, 229, .16);
+}
+
+.q {
+  border-top: 1px solid var(--line-strong);
+  padding: 1rem 0;
+}
+
+.q:first-of-type {
+  border-top: 0;
+}
+
+.q p {
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: .5rem;
+}
+
+.q label {
+  margin-right: 1.25rem;
+}
+
+.score-bar {
+  height: .65rem;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: .5rem 0 .75rem;
+}
+
+.score-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--btn);
+  transition: width .5s ease;
+}
+
